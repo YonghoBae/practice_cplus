@@ -1,16 +1,42 @@
 #include <iostream>
 using namespace std;
 
-char& find(char s[], int index) {
-    return s[index]; // ì°¸ì¡° ë¦¬í„´
+class Circle {
+private:
+    int radius;
+    public:
+    Circle();
+    Circle(int r);
+    Circle(Circle& cc);
+    ~Circle();
+    double getArea() { return 3.14*radius*radius; }
+    int getRadius() { return radius; }
+    void setRadius(int radius) { this->radius = radius; }
+};
+
+Circle::Circle() {
+radius = 1;
+cout << "»ý¼ºÀÚ ½ÇÇà radius = " << radius << endl;
 }
+Circle::Circle(int radius) {
+this->radius = radius;
+cout << "»ý¼ºÀÚ ½ÇÇà radius = " << radius << endl;
+}
+Circle::Circle(Circle& cc){
+    this->radius=cc.radius;
+    cout<<"º¹»ç»ý¼ºÀÚ ½ÇÇà"<<endl;
+}
+Circle::~Circle() {
+cout << "¼Ò¸êÀÚ ½ÇÇà radius = " << radius << endl;
+}
+
+void increase(Circle c) {
+    int r = c.getRadius();
+    c.setRadius(r+1);
+}
+
 int main() {
-    char name[] = "Mike";
-    cout << name << endl;
-    find(name, 0) = 'S'; // name[0]='S'ë¡œ ë³€ê²½
-    cout << name << endl;
-    char& ref = find(name, 2);
-    ref = 't'; // name = "Site"
-    find(name,3) = 'x';
-    cout << name << endl;
+    Circle waffle(30);
+    increase(waffle);
+    cout << waffle.getRadius() << endl;
 }

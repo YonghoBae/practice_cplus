@@ -50,11 +50,14 @@ Book::Book(const char* title, int price) {
 }
 
 Book::~Book() {
-	if(title)
+	if(title!=NULL)
 		delete[] title; //객체 title에 값이 있으면 메모리할당 해제
 }
 
-void Book::set(const char* title, int price) {
+void Book::set(const char* title, int price) {	
+	if(this->title!=NULL){
+		delete[] this->title;
+	}	
 	int len = strlen(title); // 입력받은 title 길이 len에 저장
 	this->title = new char[len + 1]; // 객체 제목에 동적메모리할당
 	strcpy(this->title, title); //객체 제목에 입력받은 title 복사 

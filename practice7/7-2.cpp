@@ -1,5 +1,5 @@
 /***************************************************************/
-/*             HW#7 : 개선된 함수 기능                                 */
+/*             HW#7 : 여러가지 객체의 생성방법                             */
 /*  작성자 : 배용호                    날짜 : 2023년 5월 7일  */
 /*                                                                                     */
 /* 문제 정의 :
@@ -47,8 +47,8 @@ using namespace std;
 class Color {
     int red, green, blue;
 public:
-    Color() { red = green = blue = 0; }
-    Color(int r, int g, int b) { red = r; green = g; blue = b; }
+    Color() { red = green = blue = 0; }//기본생성자
+    Color(int r, int g, int b) { red = r; green = g; blue = b; }//생성자-> r,g,b로 초기화
     void setColor(int r, int g, int b) { red = r; green = g; blue = b; }
     void show() { cout << red << ' '<< green << ' ' << blue << endl; }
 };

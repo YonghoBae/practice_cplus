@@ -24,6 +24,10 @@ using namespace std;
 class Circle{
 protected:
     int radius;
+public:
+    int getradius(){
+        return this->radius;
+    } //반지름 get 함수
 };//클래스 Circle
 
 class NamedCircle:public Circle{
@@ -32,9 +36,6 @@ public:
         this->radius = r;
         this->circle_name = name;
     } //반지름, 이름 set함수
-    int getradius(){
-        return this->radius;
-    } //반지름 get 함수
     string getname(){
         return this->circle_name;
     } //이름 get 함수

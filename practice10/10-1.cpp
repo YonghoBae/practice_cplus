@@ -18,15 +18,16 @@ waffle.show();
 using namespace std;
 
 class Circle{
-public:
+protected:
     int radius;
 }; //클래스 Circle
 
-class NamedCircle:public Circle{
+class NamedCircle:protected Circle{
 public:
     NamedCircle(); //기본생성자
     NamedCircle(int r, string name); //반지름, 이름 초기화 생성자
     int show(); //반지름, 이름 출력
+protected:
     string circle_name; //원이름
 }; // Circle 상속받은 NamedCircle 
 

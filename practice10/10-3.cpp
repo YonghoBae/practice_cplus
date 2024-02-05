@@ -67,16 +67,16 @@ public:
     }
     void enqueue(int n){
         put(last++, n);
-    } //push
+    } //enqueue
     int dequeue(){
         return get(first++);
-    } //pop
+    } //dequeue
     int capacity(){
         return getCapacity();
-    } //스택 메모리용량 리턴
+    } //queue 메모리용량 리턴
     int length(){
         return last - first;
-    } //스택 현재 크기 리턴
+    } //queue 현재 크기 리턴
 };
 
 int main() {

@@ -1,11 +1,11 @@
 
 /***************************************************************/
-/*             HW#7 : ê°œì„ ëœ í•¨ìˆ˜ ê¸°ëŠ¥                                 */
-/*  ì‘ì„±ì : ë°°ìš©í˜¸                    ë‚ ì§œ : 2023ë…„ 5ì›” 7ì¼  */
+/*             HW#7 : ¿©·¯°¡Áö °´Ã¼ÀÇ »ı¼º¹æ¹ı                               */
+/*  ÀÛ¼ºÀÚ : ¹è¿ëÈ£                    ³¯Â¥ : 2023³â 5¿ù 7ÀÏ  */
 /*                                                                                     */
-/* ë¬¸ì œ ì •ì˜ :
-ë‹¤ìŒì—ì„œ Personì€ ì‚¬ëŒì„, FamilyëŠ” ê°€ì¡±ì„ ì¶”ìƒí™”í•œ í´ë˜ìŠ¤ë¡œì„œ ì™„ì„±
-ë˜ì§€ ì•Šì€ í´ë˜ìŠ¤ì´ë‹¤.
+/* ¹®Á¦ Á¤ÀÇ :
+´ÙÀ½¿¡¼­ PersonÀº »ç¶÷À», Family´Â °¡Á·À» Ãß»óÈ­ÇÑ Å¬·¡½º·Î¼­ ¿Ï¼º
+µÇÁö ¾ÊÀº Å¬·¡½ºÀÌ´Ù.
 class Person {
 string name;
 public:
@@ -16,27 +16,27 @@ void setName(string name) { this->name = name; }
 };
 class Family {
 string name;
-Person* p; // Person ë°°ì—´ í¬ì¸í„°
-int size; // Person ë°°ì—´ì˜ í¬ê¸°. ê°€ì¡± êµ¬ì„±ì› ìˆ˜
+Person* p; // Person ¹è¿­ Æ÷ÀÎÅÍ
+int size; // Person ¹è¿­ÀÇ Å©±â. °¡Á· ±¸¼º¿ø ¼ö
 public:
-Family(string name, int size); // size ê°œìˆ˜ë§Œí¼ Person ë°°ì—´ ë™ì  ìƒì„±
+Family(string name, int size); // size °³¼ö¸¸Å­ Person ¹è¿­ µ¿Àû »ı¼º
 void setName(int index, string name);
-void show(); // ëª¨ë“  ê°€ì¡± êµ¬ì„±ì› ì¶œë ¥
+void show(); // ¸ğµç °¡Á· ±¸¼º¿ø Ãâ·Â
 ~Family();
 };
 
-ë‹¤ìŒ main()ì´ ì‘ë™ë˜ë„ë¡ Personê³¼ Family í´ë˜ìŠ¤ì— í•„ìš”í•œ ë©¤ë²„ë“¤ì„ ì¶”ê°€í•˜ê³ , ì½”ë“œë¥¼ ì™„ì„±í•˜ë¼.
+´ÙÀ½ main()ÀÌ ÀÛµ¿µÇµµ·Ï Person°ú Family Å¬·¡½º¿¡ ÇÊ¿äÇÑ ¸â¹öµéÀ» Ãß°¡ÇÏ°í, ÄÚµå¸¦ ¿Ï¼ºÇÏ¶ó.
 int main() {
-Family *simpson = new Family("Simpson", 3); // 3ëª…ìœ¼ë¡œ êµ¬ì„±ëœ Simpson ê°€ì¡±
-simpsonâ†’setName(0, "Mr. Simpson");
-simpsonâ†’setName(1, "Mrs. Simpson");
-simpsonâ†’setName(2, â€œBart Simpsonâ€);
-simpsonâ†’show();
+Family *simpson = new Family("Simpson", 3); // 3¸íÀ¸·Î ±¸¼ºµÈ Simpson °¡Á·
+simpson¡æsetName(0, "Mr. Simpson");
+simpson¡æsetName(1, "Mrs. Simpson");
+simpson¡æsetName(2, ¡°Bart Simpson¡±);
+simpson¡æshow();
 delete simpson;
 } 
 
-ì‹¤í–‰ê²°ê³¼
-Simpson ê°€ì¡±ì€ ë‹¤ìŒê³¼ ê°™ì´ 3ëª…ì…ë‹ˆë‹¤.
+½ÇÇà°á°ú
+Simpson °¡Á·Àº ´ÙÀ½°ú °°ÀÌ 3¸íÀÔ´Ï´Ù.
 Mr. Simpson Mrs. Simpson Bart Simpson                                                      */
 /*                - - - - - - -                                                      */
 /***************************************************************/
@@ -45,51 +45,51 @@ Mr. Simpson Mrs. Simpson Bart Simpson                                           
 using namespace std;
 
 class Person {
-    string name; //name ë³€ìˆ˜
+    string name; //name º¯¼ö
 public:
-    Person() { name=""; } //ë””í´íŠ¸ ìƒì„±ì name ì´ˆê¸°í™”
-    Person(string name) { this->name = name; } //ìƒì„±ì personì˜ nameì— name ëŒ€ì…
-    string getName() { return name; } //getí•¨ìˆ˜ name ë¦¬í„´
-    void setName(string name) { this->name = name; } //setí•¨ìˆ˜ nameì„¤ì •
+    Person() { name=""; } //µğÆúÆ® »ı¼ºÀÚ name ÃÊ±âÈ­
+    Person(string name) { this->name = name; } //»ı¼ºÀÚ personÀÇ name¿¡ name ´ëÀÔ
+    string getName() { return name; } //getÇÔ¼ö name ¸®ÅÏ
+    void setName(string name) { this->name = name; } //setÇÔ¼ö name¼³Á¤
 };
 
 class Family {
-    string name; // name ë³€ìˆ˜
-    Person* p; // Person ë°°ì—´ í¬ì¸í„°
-    int size; // Person ë°°ì—´ì˜ í¬ê¸°. ê°€ì¡± êµ¬ì„±ì› ìˆ˜
+    string name; // name º¯¼ö
+    Person* p; // Person ¹è¿­ Æ÷ÀÎÅÍ
+    int size; // Person ¹è¿­ÀÇ Å©±â. °¡Á· ±¸¼º¿ø ¼ö
 public:
-    Family(string name, int size); // size ê°œìˆ˜ë§Œí¼ Person ë°°ì—´ ë™ì  ìƒì„±
-    void setName(int index, string name); //setí•¨ìˆ˜
-    void show(); // ëª¨ë“  ê°€ì¡± êµ¬ì„±ì› ì¶œë ¥
-    ~Family(); //ì†Œë©¸ì
+    Family(string name, int size); // size °³¼ö¸¸Å­ Person ¹è¿­ µ¿Àû »ı¼º
+    void setName(int index, string name); //setÇÔ¼ö
+    void show(); // ¸ğµç °¡Á· ±¸¼º¿ø Ãâ·Â
+    ~Family(); //¼Ò¸êÀÚ
 };
 
 Family::Family(string name, int size){
     this->size = size;
     this->p = new Person[size];
-}//ìƒì„±ì, person sizeë§Œí¼ í¬ê¸°ì˜ ë°°ì—´ ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹ í›„ this->pì— ì£¼ì†Œ ì €ì¥
+}//»ı¼ºÀÚ, person size¸¸Å­ Å©±âÀÇ ¹è¿­ µ¿Àû ¸Ş¸ğ¸® ÇÒ´ç ÈÄ this->p¿¡ ÁÖ¼Ò ÀúÀå
 
 Family::~Family(){
     delete[] p;
-}//ì†Œë©¸ì, pê°€ ê°€ë¦¬í‚¤ëŠ” ë™ì  ë©”ëª¨ë¦¬ í•´ì œ
+}//¼Ò¸êÀÚ, p°¡ °¡¸®Å°´Â µ¿Àû ¸Ş¸ğ¸® ÇØÁ¦
 
 void Family::setName(int index, string name){
     this->p[index].setName(name);
-}//setí•¨ìˆ˜, Personì˜ setí•¨ìˆ˜ë¥¼ ì´ìš©í•´ì„œ pì˜ ë°°ì—´ì˜ indexì— name ì €ì¥
+}//setÇÔ¼ö, PersonÀÇ setÇÔ¼ö¸¦ ÀÌ¿ëÇØ¼­ pÀÇ ¹è¿­ÀÇ index¿¡ name ÀúÀå
 
 void Family::show(){
-    cout << "Simpson ê°€ì¡±ì€ ë‹¤ìŒê³¼ ê°™ì´ "<< this->size <<"ëª…ì…ë‹ˆë‹¤." << endl;//ê°€ì¡±ìˆ˜ ì¶œë ¥
+    cout << "Simpson °¡Á·Àº ´ÙÀ½°ú °°ÀÌ "<< this->size <<"¸íÀÔ´Ï´Ù." << endl;//°¡Á·¼ö Ãâ·Â
     for(int i=0;i<this->size;i++){
         cout << p[i].getName() << "  ";
-    }//ê°€ì¡±ì´ë¦„ ì¶œë ¥
+    }//°¡Á·ÀÌ¸§ Ãâ·Â
     cout << endl;
 }
 
 int main(){
-    Family *simpson = new Family("Simpson", 3); // 3ëª…ìœ¼ë¡œ êµ¬ì„±ëœ Simpson ê°€ì¡± ë™ì ë©”ëª¨ë¦¬ í• ë‹¹
+    Family *simpson = new Family("Simpson", 3); // 3¸íÀ¸·Î ±¸¼ºµÈ Simpson °¡Á· µ¿Àû¸Ş¸ğ¸® ÇÒ´ç
     simpson->setName(0, "Mr. Simpson");
     simpson->setName(1, "Mrs. Simpson");
-    simpson->setName(2, "Bart Simpson"); //ë°°ì—´ ê° indexì— ì´ë¦„ ì €ì¥
-    simpson->show(); //ëª¨ë“  ê°€ì¡±ì´ë¦„ ì¶œë ¥
-    delete simpson; // ë©”ëª¨ë¦¬í• ë‹¹ í•´ì œ
+    simpson->setName(2, "Bart Simpson"); //¹è¿­ °¢ index¿¡ ÀÌ¸§ ÀúÀå
+    simpson->show(); //¸ğµç °¡Á·ÀÌ¸§ Ãâ·Â
+    delete simpson; // ¸Ş¸ğ¸®ÇÒ´ç ÇØÁ¦
 }

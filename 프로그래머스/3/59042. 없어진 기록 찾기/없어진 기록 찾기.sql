@@ -1,0 +1,9 @@
+-- 없어진 기록 찾기
+-- ANIMAL_INS 동물 정보
+-- ANIMAL_OUTS 입양보낸 동물 정보
+-- 입양o 보호소X 동물 조회
+-- 동물 ID ASC, 이름 ASC
+
+SELECT AO.ANIMAL_ID, AO.NAME
+FROM ANIMAL_OUTS AO
+WHERE AO.ANIMAL_ID NOT IN (SELECT ANIMAL_ID FROM  ANIMAL_INS);
